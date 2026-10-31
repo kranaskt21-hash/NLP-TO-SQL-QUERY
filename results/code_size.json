@@ -1,6 +1,6 @@
 {
   "scratch_and_shared_pipeline": {
-    "nl2sql\\config.py": 93,
+    "nl2sql\\config.py": 98,
     "nl2sql\\db.py": 69,
     "nl2sql\\diagnostics.py": 81,
     "nl2sql\\distractors.py": 25,
@@ -9,7 +9,7 @@
     "nl2sql\\fk_graph.py": 47,
     "nl2sql\\generate.py": 4,
     "nl2sql\\llm.py": 146,
-    "nl2sql\\model_errors.py": 116,
+    "nl2sql\\model_errors.py": 119,
     "nl2sql\\pipeline.py": 235,
     "nl2sql\\prompt.py": 22,
     "nl2sql\\rerank.py": 20,
@@ -33,12 +33,12 @@
     "shared\\__init__.py": 0
   },
   "app": {
-    "app.py": 135
+    "app.py": 143
   },
   "totals": {
-    "scratch_and_shared_pipeline": 1287,
+    "scratch_and_shared_pipeline": 1295,
     "langchain_adapters": 147,
     "shared_evaluation_and_ui": 489,
-    "app": 135
+    "app": 143
   }
 }

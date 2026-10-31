@@ -32,6 +32,7 @@ TABLES = {
 SQLITE_MAX_VALUE_BYTES = 1_000_000
 SQLITE_MAX_SQL_BYTES = 100_000
 EMBEDDING_BATCH_SIZE = 32
+TRANSIENT_HTTP_STATUSES = frozenset({408, 429, 500, 502, 503, 504})
 
 
 @dataclass(frozen=True)
@@ -52,7 +53,7 @@ class Config:
     corrections: int = 2
     distractors: int = 0
     seed: int = 42
-    request_timeout_ms: int = 30000
+    request_timeout_ms: int = 60000
     temperature: float = 0.0
     max_output_tokens: int = 2048
     deadline_s: float = 3.0
@@ -83,7 +84,11 @@ class Config:
             or min(self.candidates, self.schema_k, self.ui_rows, self.eval_rows) < 1
         ):
             raise ValueError("Invalid retrieval or row budget")
-        if self.deadline_s <= 0 or self.transport_retries < 0:
+        if (
+            self.deadline_s <= 0
+            or self.request_timeout_ms <= 0
+            or self.transport_retries < 0
+        ):
             raise ValueError("Invalid timeout or retry budget")
 
     def fingerprint(self):

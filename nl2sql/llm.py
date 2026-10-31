@@ -8,7 +8,7 @@ from typing import Literal
 
 from pydantic import BaseModel
 
-from nl2sql.config import ROOT, digest
+from nl2sql.config import ROOT, TRANSIENT_HTTP_STATUSES, digest
 
 
 class MissingKey(ValueError):
@@ -167,9 +167,9 @@ class CachedModel:
 
                 details = safe_failure(exc)
                 if (
-                    details["http_status"] in (429, 503)
-                    and attempt < c.transport_retries
-                ):
+                    details["http_status"] in TRANSIENT_HTTP_STATUSES
+                    or details["category"] == "timeout"
+                ) and attempt < c.transport_retries:
                     time.sleep(min(2**attempt, 4))
                     continue
                 raise ModelError(failure_message(details), details) from None

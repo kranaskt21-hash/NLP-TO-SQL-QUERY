@@ -208,3 +208,72 @@ def test_real_sdk_keeps_transport_open_until_request_finishes(monkeypatch):
     generation, usage = llm.ScratchModel(Config()).invoke("Return SELECT 1")
     assert generation.sql == "SELECT 1" and usage["total"] == 15
     assert requests == ["generativelanguage.googleapis.com"] and transport.closed
+
+
+@pytest.mark.parametrize("code", [408, 500, 502, 503, 504])
+def test_transient_failure_retried_once_and_recovers(code, monkeypatch):
+    import nl2sql.llm as module
+    from nl2sql.llm import Generation
+
+    monkeypatch.setattr(module.time, "sleep", lambda _: None)
+
+    class Transient(Exception):
+        pass
+
+    class Backend:
+        calls = 0
+
+        def invoke(self, prompt):
+            self.calls += 1
+            if self.calls == 1:
+                error = Transient("SECRET_MUST_NOT_APPEAR")
+                error.code = code
+                raise error
+            return Generation(status="sql", sql="SELECT 1"), None
+
+    backend = Backend()
+    budget = Budget()
+    generation, usage, cache = CachedModel(Config(cache=False), budget, backend).invoke(
+        "question", {}
+    )
+    assert (
+        generation.sql == "SELECT 1"
+        and budget.calls == backend.calls == 2
+        and cache == "fresh"
+    )
+
+
+def test_repeated_gateway_timeout_is_bounded(monkeypatch):
+    import nl2sql.llm as module
+
+    monkeypatch.setattr(module.time, "sleep", lambda _: None)
+
+    class Timeout(Exception):
+        code = 504
+
+    class Backend:
+        def invoke(self, prompt):
+            raise Timeout("SECRET_MUST_NOT_APPEAR")
+
+    budget = Budget()
+    with pytest.raises(ModelError) as error:
+        CachedModel(Config(cache=False), budget, Backend()).invoke("question", {})
+    assert budget.calls == 2 and error.value.diagnostics["category"] == "timeout"
+    assert "SECRET_MUST_NOT_APPEAR" not in str(error.value)
+
+
+def test_client_timeout_is_retryable_and_budgeted(monkeypatch):
+    import httpx
+
+    import nl2sql.llm as module
+
+    monkeypatch.setattr(module.time, "sleep", lambda _: None)
+
+    class Backend:
+        def invoke(self, prompt):
+            raise httpx.ReadTimeout("SECRET_MUST_NOT_APPEAR")
+
+    budget = Budget()
+    with pytest.raises(ModelError) as error:
+        CachedModel(Config(cache=False), budget, Backend()).invoke("question", {})
+    assert budget.calls == 2 and error.value.diagnostics["category"] == "timeout"

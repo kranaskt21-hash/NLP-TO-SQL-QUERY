@@ -24,6 +24,13 @@ with st.sidebar:
         value=Config().model,
         help="Use a generation model accessible to your API key. The connection check below lists models from the first catalog page.",
     )
+    timeout_seconds = st.number_input(
+        "Model request timeout (seconds)",
+        min_value=15,
+        max_value=120,
+        value=Config().request_timeout_ms // 1000,
+        help="Maximum wait per Gemini attempt. One bounded retry is allowed for transient generation failures; each attempt counts toward your call budget.",
+    )
     retrieval = st.selectbox("Retrieval", ["hybrid", "dense", "bm25"])
     embedding = st.selectbox("Embedding model", [MINILM, BGE, GEMINI_EMBED])
     schema_mode = st.selectbox("Schema context", ["retrieved", "full"])
@@ -43,6 +50,7 @@ with st.sidebar:
 config = Config(
     implementation=implementation,
     model=generation_model.strip(),
+    request_timeout_ms=int(timeout_seconds) * 1000,
     retrieval=retrieval,
     embedding=embedding,
     schema_mode=schema_mode,

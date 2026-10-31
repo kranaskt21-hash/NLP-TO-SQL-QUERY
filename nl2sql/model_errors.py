@@ -51,6 +51,7 @@ def safe_failure(error):
         "runtime_event_loop": "An SDK event-loop/client lifecycle error occurred. Reboot the app and use the pinned dependencies. Connection diagnostics identify the failing adapter.",
         "structured_output": "Gemini did not return valid structured SQL/abstention output. The response may be blocked or incomplete; check the model and output budget.",
         "service": "Gemini reported a server-side failure. Retry later within the call budget.",
+        "timeout": "Gemini did not respond before the request deadline. Increase Model request timeout in the sidebar, or try fewer examples/a smaller context. If it persists, try another accessible model or retry later. A timed-out request may still consume provider quota.",
         "runtime": "An SDK/runtime error occurred. Run the Gemini connection check in the sidebar and share its safe diagnostics (never your API key).",
     }
     if "could not resolve api token" in messages or "default credentials" in messages:
@@ -63,6 +64,8 @@ def safe_failure(error):
         category = "quota"
     elif status == 400:
         category = "request_configuration"
+    elif status in (408, 504) or any("timeout" in name.lower() for name in types):
+        category = "timeout"
     elif status is not None and status >= 500:
         category = "service"
     elif any(
