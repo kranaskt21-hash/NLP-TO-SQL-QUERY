@@ -5,10 +5,10 @@
     "sql": "SELECT COUNT(*) FROM Track WHERE GenreId=7",
     "references": {
       "tables": [
-        "track"
+        "Track"
       ],
       "columns": [
-        "track.genreid"
+        "Track.GenreId"
       ],
       "supported": true
     },
@@ -24,12 +24,12 @@
     "sql": "SELECT strftime('%Y',InvoiceDate) Year,SUM(Total) FROM Invoice WHERE BillingCity='London' GROUP BY Year ORDER BY Year",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.billingcity",
-        "invoice.invoicedate",
-        "invoice.total"
+        "Invoice.BillingCity",
+        "Invoice.InvoiceDate",
+        "Invoice.Total"
       ],
       "supported": true
     },
@@ -45,10 +45,10 @@
     "sql": "SELECT AlbumId,COUNT(*) n FROM Track GROUP BY AlbumId ORDER BY n DESC,AlbumId LIMIT 4",
     "references": {
       "tables": [
-        "track"
+        "Track"
       ],
       "columns": [
-        "track.albumid"
+        "Track.AlbumId"
       ],
       "supported": true
     },

@@ -5,10 +5,10 @@
     "sql": "SELECT Name FROM Artist ORDER BY Name LIMIT 5",
     "references": {
       "tables": [
-        "artist"
+        "Artist"
       ],
       "columns": [
-        "artist.name"
+        "Artist.Name"
       ],
       "supported": true
     },
@@ -24,7 +24,7 @@
     "sql": "SELECT COUNT(*) AS Albums FROM Album",
     "references": {
       "tables": [
-        "album"
+        "Album"
       ],
       "columns": [],
       "supported": true
@@ -41,11 +41,11 @@
     "sql": "SELECT Name FROM Track WHERE UnitPrice > 1 ORDER BY Name",
     "references": {
       "tables": [
-        "track"
+        "Track"
       ],
       "columns": [
-        "track.name",
-        "track.unitprice"
+        "Track.Name",
+        "Track.UnitPrice"
       ],
       "supported": true
     },
@@ -61,10 +61,10 @@
     "sql": "SELECT DISTINCT Country FROM Customer ORDER BY Country",
     "references": {
       "tables": [
-        "customer"
+        "Customer"
       ],
       "columns": [
-        "customer.country"
+        "Customer.Country"
       ],
       "supported": true
     },
@@ -80,13 +80,13 @@
     "sql": "SELECT FirstName, LastName, Title FROM Employee ORDER BY EmployeeId",
     "references": {
       "tables": [
-        "employee"
+        "Employee"
       ],
       "columns": [
-        "employee.employeeid",
-        "employee.firstname",
-        "employee.lastname",
-        "employee.title"
+        "Employee.EmployeeId",
+        "Employee.FirstName",
+        "Employee.LastName",
+        "Employee.Title"
       ],
       "supported": true
     },
@@ -102,11 +102,11 @@
     "sql": "SELECT InvoiceId, Total FROM Invoice WHERE Total > 20 ORDER BY InvoiceId",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.invoiceid",
-        "invoice.total"
+        "Invoice.InvoiceId",
+        "Invoice.Total"
       ],
       "supported": true
     },
@@ -122,14 +122,14 @@
     "sql": "SELECT m.MediaTypeId, m.Name, COUNT(t.TrackId) AS Tracks FROM MediaType m LEFT JOIN Track t ON t.MediaTypeId=m.MediaTypeId GROUP BY m.MediaTypeId,m.Name ORDER BY m.MediaTypeId",
     "references": {
       "tables": [
-        "mediatype",
-        "track"
+        "MediaType",
+        "Track"
       ],
       "columns": [
-        "mediatype.mediatypeid",
-        "mediatype.name",
-        "track.mediatypeid",
-        "track.trackid"
+        "MediaType.MediaTypeId",
+        "MediaType.Name",
+        "Track.MediaTypeId",
+        "Track.TrackId"
       ],
       "supported": true
     },
@@ -145,15 +145,15 @@
     "sql": "SELECT a.Title,r.Name FROM Album a JOIN Artist r ON a.ArtistId=r.ArtistId ORDER BY a.AlbumId",
     "references": {
       "tables": [
-        "album",
-        "artist"
+        "Album",
+        "Artist"
       ],
       "columns": [
-        "album.albumid",
-        "album.artistid",
-        "album.title",
-        "artist.artistid",
-        "artist.name"
+        "Album.AlbumId",
+        "Album.ArtistId",
+        "Album.Title",
+        "Artist.ArtistId",
+        "Artist.Name"
       ],
       "supported": true
     },
@@ -169,10 +169,10 @@
     "sql": "SELECT Country, COUNT(*) AS Customers FROM Customer GROUP BY Country ORDER BY Country",
     "references": {
       "tables": [
-        "customer"
+        "Customer"
       ],
       "columns": [
-        "customer.country"
+        "Customer.Country"
       ],
       "supported": true
     },
@@ -188,10 +188,10 @@
     "sql": "SELECT AVG(Milliseconds) AS AverageDuration FROM Track",
     "references": {
       "tables": [
-        "track"
+        "Track"
       ],
       "columns": [
-        "track.milliseconds"
+        "Track.Milliseconds"
       ],
       "supported": true
     },
@@ -207,11 +207,11 @@
     "sql": "SELECT BillingCountry, SUM(Total) AS Revenue FROM Invoice GROUP BY BillingCountry ORDER BY BillingCountry",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.billingcountry",
-        "invoice.total"
+        "Invoice.BillingCountry",
+        "Invoice.Total"
       ],
       "supported": true
     },
@@ -227,15 +227,15 @@
     "sql": "SELECT t.Name,g.Name AS Genre FROM Track t JOIN Genre g ON t.GenreId=g.GenreId WHERE g.GenreId=1 ORDER BY t.TrackId",
     "references": {
       "tables": [
-        "genre",
-        "track"
+        "Genre",
+        "Track"
       ],
       "columns": [
-        "genre.genreid",
-        "genre.name",
-        "track.genreid",
-        "track.name",
-        "track.trackid"
+        "Genre.GenreId",
+        "Genre.Name",
+        "Track.GenreId",
+        "Track.Name",
+        "Track.TrackId"
       ],
       "supported": true
     },
@@ -251,11 +251,11 @@
     "sql": "SELECT InvoiceId FROM Invoice WHERE InvoiceDate >= '2010-01-01' AND InvoiceDate < '2011-01-01' ORDER BY InvoiceId",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.invoicedate",
-        "invoice.invoiceid"
+        "Invoice.InvoiceDate",
+        "Invoice.InvoiceId"
       ],
       "supported": true
     },
@@ -271,12 +271,12 @@
     "sql": "SELECT CustomerId FROM Customer WHERE NOT EXISTS (SELECT 1 FROM Invoice i WHERE i.CustomerId=Customer.CustomerId) ORDER BY CustomerId",
     "references": {
       "tables": [
-        "customer",
-        "invoice"
+        "Customer",
+        "Invoice"
       ],
       "columns": [
-        "customer.customerid",
-        "invoice.customerid"
+        "Customer.CustomerId",
+        "Invoice.CustomerId"
       ],
       "supported": true
     },
@@ -292,12 +292,12 @@
     "sql": "SELECT TrackId,Name,Milliseconds FROM Track ORDER BY Milliseconds DESC,TrackId LIMIT 3",
     "references": {
       "tables": [
-        "track"
+        "Track"
       ],
       "columns": [
-        "track.milliseconds",
-        "track.name",
-        "track.trackid"
+        "Track.Milliseconds",
+        "Track.Name",
+        "Track.TrackId"
       ],
       "supported": true
     },
@@ -313,14 +313,14 @@
     "sql": "SELECT p.Name,COUNT(pt.TrackId) AS Tracks FROM Playlist p LEFT JOIN PlaylistTrack pt ON p.PlaylistId=pt.PlaylistId GROUP BY p.PlaylistId,p.Name ORDER BY p.PlaylistId",
     "references": {
       "tables": [
-        "playlist",
-        "playlisttrack"
+        "Playlist",
+        "PlaylistTrack"
       ],
       "columns": [
-        "playlist.name",
-        "playlist.playlistid",
-        "playlisttrack.playlistid",
-        "playlisttrack.trackid"
+        "Playlist.Name",
+        "Playlist.PlaylistId",
+        "PlaylistTrack.PlaylistId",
+        "PlaylistTrack.TrackId"
       ],
       "supported": true
     },
@@ -336,10 +336,10 @@
     "sql": "SELECT SUM(Quantity) AS Units FROM InvoiceLine",
     "references": {
       "tables": [
-        "invoiceline"
+        "InvoiceLine"
       ],
       "columns": [
-        "invoiceline.quantity"
+        "InvoiceLine.Quantity"
       ],
       "supported": true
     },
@@ -355,11 +355,11 @@
     "sql": "SELECT CustomerId,SUM(Total) AS Spend FROM Invoice GROUP BY CustomerId HAVING SUM(Total)>40 ORDER BY CustomerId",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.customerid",
-        "invoice.total"
+        "Invoice.CustomerId",
+        "Invoice.Total"
       ],
       "supported": true
     },
@@ -375,11 +375,11 @@
     "sql": "SELECT Name FROM Track WHERE LOWER(Name) LIKE '%love%' ORDER BY TrackId",
     "references": {
       "tables": [
-        "track"
+        "Track"
       ],
       "columns": [
-        "track.name",
-        "track.trackid"
+        "Track.Name",
+        "Track.TrackId"
       ],
       "supported": true
     },
@@ -395,13 +395,13 @@
     "sql": "SELECT EmployeeId,FirstName,LastName FROM Employee WHERE ReportsTo=2 ORDER BY EmployeeId",
     "references": {
       "tables": [
-        "employee"
+        "Employee"
       ],
       "columns": [
-        "employee.employeeid",
-        "employee.firstname",
-        "employee.lastname",
-        "employee.reportsto"
+        "Employee.EmployeeId",
+        "Employee.FirstName",
+        "Employee.LastName",
+        "Employee.ReportsTo"
       ],
       "supported": true
     },
@@ -417,11 +417,11 @@
     "sql": "SELECT AlbumId,MIN(UnitPrice) AS MinimumPrice FROM Track GROUP BY AlbumId ORDER BY AlbumId",
     "references": {
       "tables": [
-        "track"
+        "Track"
       ],
       "columns": [
-        "track.albumid",
-        "track.unitprice"
+        "Track.AlbumId",
+        "Track.UnitPrice"
       ],
       "supported": true
     },
@@ -437,12 +437,12 @@
     "sql": "SELECT TrackId FROM Track WHERE NOT EXISTS(SELECT 1 FROM PlaylistTrack p WHERE p.TrackId=Track.TrackId) ORDER BY TrackId",
     "references": {
       "tables": [
-        "playlisttrack",
-        "track"
+        "PlaylistTrack",
+        "Track"
       ],
       "columns": [
-        "playlisttrack.trackid",
-        "track.trackid"
+        "PlaylistTrack.TrackId",
+        "Track.TrackId"
       ],
       "supported": true
     },
@@ -458,11 +458,11 @@
     "sql": "SELECT strftime('%Y',InvoiceDate) AS Year,AVG(Total) AS AverageTotal FROM Invoice GROUP BY Year ORDER BY Year",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.invoicedate",
-        "invoice.total"
+        "Invoice.InvoiceDate",
+        "Invoice.Total"
       ],
       "supported": true
     },
@@ -478,17 +478,17 @@
     "sql": "SELECT g.GenreId,g.Name,SUM(l.Quantity) AS Units FROM Genre g JOIN Track t ON t.GenreId=g.GenreId JOIN InvoiceLine l ON l.TrackId=t.TrackId GROUP BY g.GenreId,g.Name ORDER BY Units DESC,g.GenreId LIMIT 5",
     "references": {
       "tables": [
-        "genre",
-        "invoiceline",
-        "track"
+        "Genre",
+        "InvoiceLine",
+        "Track"
       ],
       "columns": [
-        "genre.genreid",
-        "genre.name",
-        "invoiceline.quantity",
-        "invoiceline.trackid",
-        "track.genreid",
-        "track.trackid"
+        "Genre.GenreId",
+        "Genre.Name",
+        "InvoiceLine.Quantity",
+        "InvoiceLine.TrackId",
+        "Track.GenreId",
+        "Track.TrackId"
       ],
       "supported": true
     },
@@ -504,13 +504,13 @@
     "sql": "SELECT e.EmployeeId,COUNT(c.CustomerId) AS Customers FROM Employee e LEFT JOIN Customer c ON c.SupportRepId=e.EmployeeId GROUP BY e.EmployeeId ORDER BY e.EmployeeId",
     "references": {
       "tables": [
-        "customer",
-        "employee"
+        "Customer",
+        "Employee"
       ],
       "columns": [
-        "customer.customerid",
-        "customer.supportrepid",
-        "employee.employeeid"
+        "Customer.CustomerId",
+        "Customer.SupportRepId",
+        "Employee.EmployeeId"
       ],
       "supported": true
     },
@@ -526,10 +526,10 @@
     "sql": "SELECT AlbumId,COUNT(*) AS Tracks FROM Track GROUP BY AlbumId HAVING COUNT(*)>15 ORDER BY AlbumId",
     "references": {
       "tables": [
-        "track"
+        "Track"
       ],
       "columns": [
-        "track.albumid"
+        "Track.AlbumId"
       ],
       "supported": true
     },
@@ -545,11 +545,11 @@
     "sql": "WITH s AS (SELECT CustomerId,SUM(Total) Spend FROM Invoice GROUP BY CustomerId) SELECT CustomerId,Spend FROM s WHERE Spend>(SELECT AVG(Spend) FROM s) ORDER BY CustomerId",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.customerid",
-        "invoice.total"
+        "Invoice.CustomerId",
+        "Invoice.Total"
       ],
       "supported": true
     },
@@ -565,12 +565,12 @@
     "sql": "SELECT TrackId,SUM(UnitPrice*Quantity) AS Revenue FROM InvoiceLine GROUP BY TrackId ORDER BY TrackId",
     "references": {
       "tables": [
-        "invoiceline"
+        "InvoiceLine"
       ],
       "columns": [
-        "invoiceline.quantity",
-        "invoiceline.trackid",
-        "invoiceline.unitprice"
+        "InvoiceLine.Quantity",
+        "InvoiceLine.TrackId",
+        "InvoiceLine.UnitPrice"
       ],
       "supported": true
     },
@@ -586,11 +586,11 @@
     "sql": "SELECT CustomerId,MAX(InvoiceDate) AS Latest FROM Invoice GROUP BY CustomerId ORDER BY CustomerId",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.customerid",
-        "invoice.invoicedate"
+        "Invoice.CustomerId",
+        "Invoice.InvoiceDate"
       ],
       "supported": true
     },
@@ -606,13 +606,13 @@
     "sql": "SELECT ArtistId,Name FROM Artist WHERE NOT EXISTS(SELECT 1 FROM Album a WHERE a.ArtistId=Artist.ArtistId) ORDER BY ArtistId",
     "references": {
       "tables": [
-        "album",
-        "artist"
+        "Album",
+        "Artist"
       ],
       "columns": [
-        "album.artistid",
-        "artist.artistid",
-        "artist.name"
+        "Album.ArtistId",
+        "Artist.ArtistId",
+        "Artist.Name"
       ],
       "supported": true
     },

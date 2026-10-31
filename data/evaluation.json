@@ -6,10 +6,10 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "customer"
+        "Customer"
       ],
       "columns": [
-        "customer.country"
+        "Customer.Country"
       ],
       "supported": true
     },
@@ -26,11 +26,11 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "playlist"
+        "Playlist"
       ],
       "columns": [
-        "playlist.name",
-        "playlist.playlistid"
+        "Playlist.Name",
+        "Playlist.PlaylistId"
       ],
       "supported": true
     },
@@ -47,11 +47,11 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "genre"
+        "Genre"
       ],
       "columns": [
-        "genre.genreid",
-        "genre.name"
+        "Genre.GenreId",
+        "Genre.Name"
       ],
       "supported": true
     },
@@ -68,10 +68,10 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.total"
+        "Invoice.Total"
       ],
       "supported": true
     },
@@ -88,10 +88,10 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "track"
+        "Track"
       ],
       "columns": [
-        "track.unitprice"
+        "Track.UnitPrice"
       ],
       "supported": true
     },
@@ -108,11 +108,11 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "customer"
+        "Customer"
       ],
       "columns": [
-        "customer.company",
-        "customer.customerid"
+        "Customer.Company",
+        "Customer.CustomerId"
       ],
       "supported": true
     },
@@ -129,11 +129,11 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "employee"
+        "Employee"
       ],
       "columns": [
-        "employee.birthdate",
-        "employee.employeeid"
+        "Employee.BirthDate",
+        "Employee.EmployeeId"
       ],
       "supported": true
     },
@@ -150,10 +150,10 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.billingcountry"
+        "Invoice.BillingCountry"
       ],
       "supported": true
     },
@@ -170,11 +170,11 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "track"
+        "Track"
       ],
       "columns": [
-        "track.milliseconds",
-        "track.trackid"
+        "Track.Milliseconds",
+        "Track.TrackId"
       ],
       "supported": true
     },
@@ -191,11 +191,11 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "album"
+        "Album"
       ],
       "columns": [
-        "album.albumid",
-        "album.title"
+        "Album.AlbumId",
+        "Album.Title"
       ],
       "supported": true
     },
@@ -212,10 +212,10 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "track"
+        "Track"
       ],
       "columns": [
-        "track.composer"
+        "Track.Composer"
       ],
       "supported": true
     },
@@ -232,11 +232,11 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "customer"
+        "Customer"
       ],
       "columns": [
-        "customer.city",
-        "customer.customerid"
+        "Customer.City",
+        "Customer.CustomerId"
       ],
       "supported": true
     },
@@ -253,10 +253,10 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "track"
+        "Track"
       ],
       "columns": [
-        "track.bytes"
+        "Track.Bytes"
       ],
       "supported": true
     },
@@ -273,11 +273,11 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.invoicedate",
-        "invoice.invoiceid"
+        "Invoice.InvoiceDate",
+        "Invoice.InvoiceId"
       ],
       "supported": true
     },
@@ -294,11 +294,11 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "mediatype"
+        "MediaType"
       ],
       "columns": [
-        "mediatype.mediatypeid",
-        "mediatype.name"
+        "MediaType.MediaTypeId",
+        "MediaType.Name"
       ],
       "supported": true
     },
@@ -315,10 +315,10 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "employee"
+        "Employee"
       ],
       "columns": [
-        "employee.reportsto"
+        "Employee.ReportsTo"
       ],
       "supported": true
     },
@@ -335,11 +335,11 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "customer"
+        "Customer"
       ],
       "columns": [
-        "customer.customerid",
-        "customer.email"
+        "Customer.CustomerId",
+        "Customer.Email"
       ],
       "supported": true
     },
@@ -356,7 +356,7 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "playlisttrack"
+        "PlaylistTrack"
       ],
       "columns": [],
       "supported": true
@@ -374,11 +374,11 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "artist"
+        "Artist"
       ],
       "columns": [
-        "artist.artistid",
-        "artist.name"
+        "Artist.ArtistId",
+        "Artist.Name"
       ],
       "supported": true
     },
@@ -395,11 +395,11 @@
     "difficulty": "easy",
     "references": {
       "tables": [
-        "invoiceline"
+        "InvoiceLine"
       ],
       "columns": [
-        "invoiceline.invoicelineid",
-        "invoiceline.quantity"
+        "InvoiceLine.InvoiceLineId",
+        "InvoiceLine.Quantity"
       ],
       "supported": true
     },
@@ -416,13 +416,13 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "customer",
-        "invoice"
+        "Customer",
+        "Invoice"
       ],
       "columns": [
-        "customer.customerid",
-        "customer.firstname",
-        "invoice.customerid"
+        "Customer.CustomerId",
+        "Customer.FirstName",
+        "Invoice.CustomerId"
       ],
       "supported": true
     },
@@ -439,11 +439,11 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "track"
+        "Track"
       ],
       "columns": [
-        "track.genreid",
-        "track.milliseconds"
+        "Track.GenreId",
+        "Track.Milliseconds"
       ],
       "supported": true
     },
@@ -460,10 +460,10 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "album"
+        "Album"
       ],
       "columns": [
-        "album.artistid"
+        "Album.ArtistId"
       ],
       "supported": true
     },
@@ -480,10 +480,10 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "invoiceline"
+        "InvoiceLine"
       ],
       "columns": [
-        "invoiceline.invoiceid"
+        "InvoiceLine.InvoiceId"
       ],
       "supported": true
     },
@@ -500,16 +500,16 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "album",
-        "track"
+        "Album",
+        "Track"
       ],
       "columns": [
-        "album.albumid",
-        "album.artistid",
-        "album.title",
-        "track.albumid",
-        "track.name",
-        "track.trackid"
+        "Album.AlbumId",
+        "Album.ArtistId",
+        "Album.Title",
+        "Track.AlbumId",
+        "Track.Name",
+        "Track.TrackId"
       ],
       "supported": true
     },
@@ -526,11 +526,11 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.invoicedate",
-        "invoice.total"
+        "Invoice.InvoiceDate",
+        "Invoice.Total"
       ],
       "supported": true
     },
@@ -547,17 +547,17 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "customer",
-        "employee"
+        "Customer",
+        "Employee"
       ],
       "columns": [
-        "customer.customerid",
-        "customer.firstname",
-        "customer.lastname",
-        "customer.supportrepid",
-        "employee.employeeid",
-        "employee.firstname",
-        "employee.lastname"
+        "Customer.CustomerId",
+        "Customer.FirstName",
+        "Customer.LastName",
+        "Customer.SupportRepId",
+        "Employee.EmployeeId",
+        "Employee.FirstName",
+        "Employee.LastName"
       ],
       "supported": true
     },
@@ -574,10 +574,10 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.billingcountry"
+        "Invoice.BillingCountry"
       ],
       "supported": true
     },
@@ -594,14 +594,14 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "playlisttrack",
-        "track"
+        "PlaylistTrack",
+        "Track"
       ],
       "columns": [
-        "playlisttrack.playlistid",
-        "playlisttrack.trackid",
-        "track.name",
-        "track.trackid"
+        "PlaylistTrack.PlaylistId",
+        "PlaylistTrack.TrackId",
+        "Track.Name",
+        "Track.TrackId"
       ],
       "supported": true
     },
@@ -618,14 +618,14 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "mediatype",
-        "track"
+        "MediaType",
+        "Track"
       ],
       "columns": [
-        "mediatype.mediatypeid",
-        "mediatype.name",
-        "track.bytes",
-        "track.mediatypeid"
+        "MediaType.MediaTypeId",
+        "MediaType.Name",
+        "Track.Bytes",
+        "Track.MediaTypeId"
       ],
       "supported": true
     },
@@ -642,14 +642,14 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "customer",
-        "invoice"
+        "Customer",
+        "Invoice"
       ],
       "columns": [
-        "customer.country",
-        "customer.customerid",
-        "invoice.billingcountry",
-        "invoice.customerid"
+        "Customer.Country",
+        "Customer.CustomerId",
+        "Invoice.BillingCountry",
+        "Invoice.CustomerId"
       ],
       "supported": true
     },
@@ -666,12 +666,12 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "employee"
+        "Employee"
       ],
       "columns": [
-        "employee.employeeid",
-        "employee.lastname",
-        "employee.reportsto"
+        "Employee.EmployeeId",
+        "Employee.LastName",
+        "Employee.ReportsTo"
       ],
       "supported": true
     },
@@ -688,18 +688,18 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "genre",
-        "invoiceline",
-        "track"
+        "Genre",
+        "InvoiceLine",
+        "Track"
       ],
       "columns": [
-        "genre.genreid",
-        "genre.name",
-        "invoiceline.quantity",
-        "invoiceline.trackid",
-        "invoiceline.unitprice",
-        "track.genreid",
-        "track.trackid"
+        "Genre.GenreId",
+        "Genre.Name",
+        "InvoiceLine.Quantity",
+        "InvoiceLine.TrackId",
+        "InvoiceLine.UnitPrice",
+        "Track.GenreId",
+        "Track.TrackId"
       ],
       "supported": true
     },
@@ -716,11 +716,11 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "track"
+        "Track"
       ],
       "columns": [
-        "track.albumid",
-        "track.milliseconds"
+        "Track.AlbumId",
+        "Track.Milliseconds"
       ],
       "supported": true
     },
@@ -737,11 +737,11 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "customer"
+        "Customer"
       ],
       "columns": [
-        "customer.city",
-        "customer.country"
+        "Customer.City",
+        "Customer.Country"
       ],
       "supported": true
     },
@@ -758,10 +758,10 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "playlisttrack"
+        "PlaylistTrack"
       ],
       "columns": [
-        "playlisttrack.trackid"
+        "PlaylistTrack.TrackId"
       ],
       "supported": true
     },
@@ -778,11 +778,11 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.customerid",
-        "invoice.invoicedate"
+        "Invoice.CustomerId",
+        "Invoice.InvoiceDate"
       ],
       "supported": true
     },
@@ -799,11 +799,11 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "track"
+        "Track"
       ],
       "columns": [
-        "track.albumid",
-        "track.genreid"
+        "Track.AlbumId",
+        "Track.GenreId"
       ],
       "supported": true
     },
@@ -820,11 +820,11 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "invoiceline"
+        "InvoiceLine"
       ],
       "columns": [
-        "invoiceline.invoiceid",
-        "invoiceline.trackid"
+        "InvoiceLine.InvoiceId",
+        "InvoiceLine.TrackId"
       ],
       "supported": true
     },
@@ -841,17 +841,17 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "album",
-        "artist",
-        "track"
+        "Album",
+        "Artist",
+        "Track"
       ],
       "columns": [
-        "album.albumid",
-        "album.artistid",
-        "artist.artistid",
-        "artist.name",
-        "track.albumid",
-        "track.genreid"
+        "Album.AlbumId",
+        "Album.ArtistId",
+        "Artist.ArtistId",
+        "Artist.Name",
+        "Track.AlbumId",
+        "Track.GenreId"
       ],
       "supported": true
     },
@@ -868,11 +868,11 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.customerid",
-        "invoice.total"
+        "Invoice.CustomerId",
+        "Invoice.Total"
       ],
       "supported": true
     },
@@ -889,15 +889,15 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "customer",
-        "invoice"
+        "Customer",
+        "Invoice"
       ],
       "columns": [
-        "customer.customerid",
-        "customer.email",
-        "invoice.customerid",
-        "invoice.invoiceid",
-        "invoice.total"
+        "Customer.CustomerId",
+        "Customer.Email",
+        "Invoice.CustomerId",
+        "Invoice.InvoiceId",
+        "Invoice.Total"
       ],
       "supported": true
     },
@@ -914,15 +914,15 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "genre",
-        "invoiceline",
-        "track"
+        "Genre",
+        "InvoiceLine",
+        "Track"
       ],
       "columns": [
-        "genre.genreid",
-        "invoiceline.trackid",
-        "track.genreid",
-        "track.trackid"
+        "Genre.GenreId",
+        "InvoiceLine.TrackId",
+        "Track.GenreId",
+        "Track.TrackId"
       ],
       "supported": true
     },
@@ -939,14 +939,14 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "playlisttrack",
-        "track"
+        "PlaylistTrack",
+        "Track"
       ],
       "columns": [
-        "playlisttrack.playlistid",
-        "playlisttrack.trackid",
-        "track.milliseconds",
-        "track.trackid"
+        "PlaylistTrack.PlaylistId",
+        "PlaylistTrack.TrackId",
+        "Track.Milliseconds",
+        "Track.TrackId"
       ],
       "supported": true
     },
@@ -963,14 +963,14 @@
     "difficulty": "medium",
     "references": {
       "tables": [
-        "customer",
-        "invoice"
+        "Customer",
+        "Invoice"
       ],
       "columns": [
-        "customer.customerid",
-        "customer.supportrepid",
-        "invoice.customerid",
-        "invoice.invoiceid"
+        "Customer.CustomerId",
+        "Customer.SupportRepId",
+        "Invoice.CustomerId",
+        "Invoice.InvoiceId"
       ],
       "supported": true
     },
@@ -983,15 +983,15 @@
   {
     "id": "H01",
     "question": "Return all customer IDs tied for highest total invoice spending, sorted by ID.",
-    "sql": "WITH s AS (SELECT CustomerId,SUM(Total) AS Spend FROM Invoice GROUP BY CustomerId) SELECT CustomerId FROM s WHERE Spend=(SELECT MAX(Spend) FROM s) ORDER BY CustomerId",
+    "sql": "WITH s AS (SELECT CustomerId,ROUND(SUM(Total),2) AS Spend FROM Invoice GROUP BY CustomerId) SELECT CustomerId FROM s WHERE Spend=(SELECT MAX(Spend) FROM s) ORDER BY CustomerId",
     "difficulty": "hard",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.customerid",
-        "invoice.total"
+        "Invoice.CustomerId",
+        "Invoice.Total"
       ],
       "supported": true
     },
@@ -1008,12 +1008,12 @@
     "difficulty": "hard",
     "references": {
       "tables": [
-        "track"
+        "Track"
       ],
       "columns": [
-        "track.genreid",
-        "track.milliseconds",
-        "track.trackid"
+        "Track.GenreId",
+        "Track.Milliseconds",
+        "Track.TrackId"
       ],
       "supported": true
     },
@@ -1030,12 +1030,12 @@
     "difficulty": "hard",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.invoicedate",
-        "invoice.invoiceid",
-        "invoice.total"
+        "Invoice.InvoiceDate",
+        "Invoice.InvoiceId",
+        "Invoice.Total"
       ],
       "supported": true
     },
@@ -1052,17 +1052,17 @@
     "difficulty": "hard",
     "references": {
       "tables": [
-        "invoice",
-        "invoiceline",
-        "track"
+        "Invoice",
+        "InvoiceLine",
+        "Track"
       ],
       "columns": [
-        "invoice.customerid",
-        "invoice.invoiceid",
-        "invoiceline.invoiceid",
-        "invoiceline.trackid",
-        "track.genreid",
-        "track.trackid"
+        "Invoice.CustomerId",
+        "Invoice.InvoiceId",
+        "InvoiceLine.InvoiceId",
+        "InvoiceLine.TrackId",
+        "Track.GenreId",
+        "Track.TrackId"
       ],
       "supported": true
     },
@@ -1075,22 +1075,22 @@
   {
     "id": "H05",
     "question": "Return artist IDs and revenue for the top five artists by sold line revenue, breaking ties by artist ID ascending.",
-    "sql": "SELECT a.ArtistId,SUM(l.UnitPrice*l.Quantity) AS Revenue FROM Album a JOIN Track t ON a.AlbumId=t.AlbumId JOIN InvoiceLine l ON l.TrackId=t.TrackId GROUP BY a.ArtistId ORDER BY Revenue DESC,a.ArtistId LIMIT 5",
+    "sql": "SELECT a.ArtistId,ROUND(SUM(l.UnitPrice*l.Quantity),2) AS Revenue FROM Album a JOIN Track t ON a.AlbumId=t.AlbumId JOIN InvoiceLine l ON l.TrackId=t.TrackId GROUP BY a.ArtistId ORDER BY Revenue DESC,a.ArtistId LIMIT 5",
     "difficulty": "hard",
     "references": {
       "tables": [
-        "album",
-        "invoiceline",
-        "track"
+        "Album",
+        "InvoiceLine",
+        "Track"
       ],
       "columns": [
-        "album.albumid",
-        "album.artistid",
-        "invoiceline.quantity",
-        "invoiceline.trackid",
-        "invoiceline.unitprice",
-        "track.albumid",
-        "track.trackid"
+        "Album.AlbumId",
+        "Album.ArtistId",
+        "InvoiceLine.Quantity",
+        "InvoiceLine.TrackId",
+        "InvoiceLine.UnitPrice",
+        "Track.AlbumId",
+        "Track.TrackId"
       ],
       "supported": true
     },
@@ -1103,16 +1103,16 @@
   {
     "id": "H06",
     "question": "List track IDs priced above the average catalog price within their own genre, sorted ascending.",
-    "sql": "SELECT t.TrackId FROM Track t WHERE t.UnitPrice>(SELECT AVG(x.UnitPrice) FROM Track x WHERE x.GenreId=t.GenreId) ORDER BY t.TrackId",
+    "sql": "SELECT t.TrackId FROM Track t WHERE CAST(ROUND(t.UnitPrice*100) AS INTEGER)>(SELECT SUM(CAST(ROUND(x.UnitPrice*100) AS INTEGER))*1.0/COUNT(*) FROM Track x WHERE x.GenreId=t.GenreId) ORDER BY t.TrackId",
     "difficulty": "hard",
     "references": {
       "tables": [
-        "track"
+        "Track"
       ],
       "columns": [
-        "track.genreid",
-        "track.trackid",
-        "track.unitprice"
+        "Track.GenreId",
+        "Track.TrackId",
+        "Track.UnitPrice"
       ],
       "supported": true
     },
@@ -1125,15 +1125,15 @@
   {
     "id": "H07",
     "question": "Show billing country, revenue and dense revenue rank of each billing country, sorted by rank then country.",
-    "sql": "WITH c AS (SELECT BillingCountry,SUM(Total) AS Revenue FROM Invoice GROUP BY BillingCountry) SELECT BillingCountry,Revenue,DENSE_RANK() OVER(ORDER BY Revenue DESC) AS RevenueRank FROM c ORDER BY RevenueRank,BillingCountry",
+    "sql": "WITH c AS (SELECT BillingCountry,ROUND(SUM(Total),2) AS Revenue FROM Invoice GROUP BY BillingCountry) SELECT BillingCountry,Revenue,DENSE_RANK() OVER(ORDER BY Revenue DESC) AS RevenueRank FROM c ORDER BY RevenueRank,BillingCountry",
     "difficulty": "hard",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.billingcountry",
-        "invoice.total"
+        "Invoice.BillingCountry",
+        "Invoice.Total"
       ],
       "supported": true
     },
@@ -1150,15 +1150,15 @@
     "difficulty": "hard",
     "references": {
       "tables": [
-        "album",
-        "invoiceline",
-        "track"
+        "Album",
+        "InvoiceLine",
+        "Track"
       ],
       "columns": [
-        "album.albumid",
-        "invoiceline.trackid",
-        "track.albumid",
-        "track.trackid"
+        "Album.AlbumId",
+        "InvoiceLine.TrackId",
+        "Track.AlbumId",
+        "Track.TrackId"
       ],
       "supported": true
     },
@@ -1175,11 +1175,11 @@
     "difficulty": "hard",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.invoicedate",
-        "invoice.total"
+        "Invoice.InvoiceDate",
+        "Invoice.Total"
       ],
       "supported": true
     },
@@ -1196,11 +1196,11 @@
     "difficulty": "hard",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.customerid",
-        "invoice.total"
+        "Invoice.CustomerId",
+        "Invoice.Total"
       ],
       "supported": true
     },
@@ -1213,18 +1213,18 @@
   {
     "id": "H11",
     "question": "For each customer country return all customer IDs tied for maximum spending within that country, sorted by country then ID.",
-    "sql": "WITH s AS (SELECT c.Country,c.CustomerId,SUM(i.Total) AS Spend FROM Customer c JOIN Invoice i ON c.CustomerId=i.CustomerId GROUP BY c.Country,c.CustomerId),r AS (SELECT *,DENSE_RANK() OVER(PARTITION BY Country ORDER BY Spend DESC) AS Position FROM s) SELECT Country,CustomerId,Spend FROM r WHERE Position=1 ORDER BY Country,CustomerId",
+    "sql": "WITH s AS (SELECT c.Country,c.CustomerId,ROUND(SUM(i.Total),2) AS Spend FROM Customer c JOIN Invoice i ON c.CustomerId=i.CustomerId GROUP BY c.Country,c.CustomerId),r AS (SELECT *,DENSE_RANK() OVER(PARTITION BY Country ORDER BY Spend DESC) AS Position FROM s) SELECT Country,CustomerId,Spend FROM r WHERE Position=1 ORDER BY Country,CustomerId",
     "difficulty": "hard",
     "references": {
       "tables": [
-        "customer",
-        "invoice"
+        "Customer",
+        "Invoice"
       ],
       "columns": [
-        "customer.country",
-        "customer.customerid",
-        "invoice.customerid",
-        "invoice.total"
+        "Customer.Country",
+        "Customer.CustomerId",
+        "Invoice.CustomerId",
+        "Invoice.Total"
       ],
       "supported": true
     },
@@ -1241,15 +1241,15 @@
     "difficulty": "hard",
     "references": {
       "tables": [
-        "invoiceline",
-        "track"
+        "InvoiceLine",
+        "Track"
       ],
       "columns": [
-        "invoiceline.quantity",
-        "invoiceline.trackid",
-        "invoiceline.unitprice",
-        "track.genreid",
-        "track.trackid"
+        "InvoiceLine.Quantity",
+        "InvoiceLine.TrackId",
+        "InvoiceLine.UnitPrice",
+        "Track.GenreId",
+        "Track.TrackId"
       ],
       "supported": true
     },
@@ -1266,11 +1266,11 @@
     "difficulty": "hard",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.invoiceid",
-        "invoice.total"
+        "Invoice.InvoiceId",
+        "Invoice.Total"
       ],
       "supported": true
     },
@@ -1287,11 +1287,11 @@
     "difficulty": "hard",
     "references": {
       "tables": [
-        "invoice"
+        "Invoice"
       ],
       "columns": [
-        "invoice.customerid",
-        "invoice.invoicedate"
+        "Invoice.CustomerId",
+        "Invoice.InvoiceDate"
       ],
       "supported": true
     },
@@ -1308,15 +1308,15 @@
     "difficulty": "hard",
     "references": {
       "tables": [
-        "invoice",
-        "invoiceline"
+        "Invoice",
+        "InvoiceLine"
       ],
       "columns": [
-        "invoice.billingcountry",
-        "invoice.invoiceid",
-        "invoiceline.invoiceid",
-        "invoiceline.quantity",
-        "invoiceline.trackid"
+        "Invoice.BillingCountry",
+        "Invoice.InvoiceId",
+        "InvoiceLine.InvoiceId",
+        "InvoiceLine.Quantity",
+        "InvoiceLine.TrackId"
       ],
       "supported": true
     },

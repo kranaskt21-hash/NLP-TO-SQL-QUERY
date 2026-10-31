@@ -1,0 +1,16 @@
+{
+  "database_sha256": "7651ba378ac2fcd0dfc3c66fb101f7a7eed3ba39a612ec642b96e20702061f15",
+  "documents_sha256": "1eac9872abee60685bfd8b08ecce3ec480d49d2307e2ecb9322c5fab9c925f6b",
+  "embedding": {
+    "model": "sentence-transformers/all-MiniLM-L6-v2",
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "normalized": true,
+    "query_prefix": "",
+    "document_prefix": "",
+    "gemini_tasks": false
+  },
+  "dimensions": 384,
+  "count": 30,
+  "format": 1,
+  "index_sha256": "bdba4467d04511a4e5ffe0f23617eb18300c889baf489008aa9b03d6c2eba341"
+}

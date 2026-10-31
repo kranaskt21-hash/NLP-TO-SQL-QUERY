@@ -484,7 +484,7 @@
     },
     "H06": {
       "execution": "passed",
-      "rows": 214,
+      "rows": 0,
       "columns": 1,
       "references_supported": true
     },
@@ -641,6 +641,391 @@
     {
       "id": "R15",
       "check": "Python longest tracks and tie ordering",
+      "passed": true
+    },
+    {
+      "id": "E02",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "E03",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "E07",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "E10",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "E11",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "E12",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "E15",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "E16",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "E17",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "E18",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "E19",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "E20",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M01",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M03",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M04",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M05",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M06",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M07",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M08",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M09",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M10",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M11",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M12",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M13",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M14",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M15",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M16",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M17",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M18",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M19",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M20",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M21",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M22",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M23",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M24",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "M25",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "H04",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "H05",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "H06",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "H07",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "H08",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "H09",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "H10",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "H11",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "H12",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "H15",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R01",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R03",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R04",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R05",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R06",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R07",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R08",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R09",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R10",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R11",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R12",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R13",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R14",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R16",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R17",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R18",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R19",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R20",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R21",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R22",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R23",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R24",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R25",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R26",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R27",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R28",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R29",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "R30",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "D01",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "D02",
+      "check": "Independent Python relational oracle for stated question",
+      "passed": true
+    },
+    {
+      "id": "D03",
+      "check": "Independent Python relational oracle for stated question",
       "passed": true
     }
   ],
