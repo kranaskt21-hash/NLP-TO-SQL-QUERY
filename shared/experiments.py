@@ -78,7 +78,9 @@ def aggregate(records):
     )
     out["cache_hits"] = sum("hit" in r["result"]["cache_status"] for r in records)
     out["tokens_available"] = sum(
-        r["result"]["token_usage"] is not None for r in records
+        r["result"]["token_usage"] is not None
+        and r["result"]["token_usage"].get("total") is not None
+        for r in records
     )
     out["tokens_total"] = (
         sum(

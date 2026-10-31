@@ -1,0 +1,42 @@
+{
+  "scratch_and_shared_pipeline": {
+    "nl2sql\\config.py": 92,
+    "nl2sql\\db.py": 69,
+    "nl2sql\\distractors.py": 25,
+    "nl2sql\\embeddings.py": 80,
+    "nl2sql\\examples.py": 9,
+    "nl2sql\\fk_graph.py": 47,
+    "nl2sql\\generate.py": 4,
+    "nl2sql\\llm.py": 135,
+    "nl2sql\\pipeline.py": 234,
+    "nl2sql\\prompt.py": 22,
+    "nl2sql\\rerank.py": 20,
+    "nl2sql\\retrieval.py": 165,
+    "nl2sql\\schema_docs.py": 52,
+    "nl2sql\\summary.py": 18,
+    "nl2sql\\validator.py": 103,
+    "nl2sql\\__init__.py": 0
+  },
+  "langchain_adapters": {
+    "lc\\chains.py": 51,
+    "lc\\example_selector.py": 12,
+    "lc\\retrievers.py": 82,
+    "lc\\__init__.py": 0
+  },
+  "shared_evaluation_and_ui": {
+    "shared\\experiments.py": 137,
+    "shared\\interfaces.py": 42,
+    "shared\\metrics.py": 140,
+    "shared\\ui.py": 166,
+    "shared\\__init__.py": 0
+  },
+  "app": {
+    "app.py": 112
+  },
+  "totals": {
+    "scratch_and_shared_pipeline": 1075,
+    "langchain_adapters": 145,
+    "shared_evaluation_and_ui": 485,
+    "app": 112
+  }
+}

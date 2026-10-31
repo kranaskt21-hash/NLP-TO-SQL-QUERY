@@ -31,6 +31,13 @@ def execution_equal(pred, gold, ordered=False, tie_groups=None):
     if ordered:
         if tie_groups is None:
             return all(eq(a, b) for a, b in zip(pred.rows, gold.rows))
+        covered = 0
+        for start, end in tie_groups:
+            if start != covered or end <= start or end > len(gold.rows):
+                raise ValueError("Tie groups must partition all result rows")
+            covered = end
+        if covered != len(gold.rows):
+            raise ValueError("Tie groups must partition all result rows")
         # Explicit gold order-key groups may permit permutations within ties only.
         return all(
             execution_equal(

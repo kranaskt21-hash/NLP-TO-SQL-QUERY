@@ -1,0 +1,68 @@
+[
+  {
+    "implementation": "scratch",
+    "status": "success",
+    "schema_ids": [
+      "column:Track.Name",
+      "column:Track.Bytes",
+      "column:Track.TrackId",
+      "column:Track.Composer",
+      "column:Track.Milliseconds",
+      "column:Album.Title",
+      "column:Track.GenreId",
+      "table:Track",
+      "table:Album"
+    ],
+    "example_ids": [
+      "R02",
+      "R17",
+      "R22",
+      "R26"
+    ],
+    "timings": {
+      "retrieval": 9.875906699999177,
+      "fk_expansion": 0.002863799993065186,
+      "generation": 0.0001801999969757162,
+      "validation": 0.009353000001283363,
+      "execution": 0.003606099999160506,
+      "summary": 0.0016931999998632818,
+      "total": 9.894582699998864
+    },
+    "generation": "mocked",
+    "interpretation": "Sequential integration checks share model warmup; timing is not a pipeline performance comparison.",
+    "token_usage": null
+  },
+  {
+    "implementation": "langchain",
+    "status": "success",
+    "schema_ids": [
+      "column:Track.Name",
+      "column:Track.Bytes",
+      "column:Track.TrackId",
+      "column:Track.Composer",
+      "column:Track.Milliseconds",
+      "column:Album.Title",
+      "column:Track.GenreId",
+      "table:Track",
+      "table:Album"
+    ],
+    "example_ids": [
+      "R02",
+      "R17",
+      "R22",
+      "R26"
+    ],
+    "timings": {
+      "retrieval": 0.6341657000011764,
+      "fk_expansion": 0.005969400001049507,
+      "generation": 0.00026000000070780516,
+      "validation": 0.00631200000498211,
+      "execution": 0.0058253000024706125,
+      "summary": 5.1700000767596066e-05,
+      "total": 0.6545248000038555
+    },
+    "generation": "mocked",
+    "interpretation": "Sequential integration checks share model warmup; timing is not a pipeline performance comparison.",
+    "token_usage": null
+  }
+]

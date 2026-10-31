@@ -4,6 +4,27 @@ from nl2sql.config import GEMINI_EMBED, Config
 from nl2sql.llm import Budget, Generation
 
 
+def test_actual_langchain_structured_binding_without_network():
+    from langchain_core.runnables import Runnable
+    from langchain_google_genai import ChatGoogleGenerativeAI
+
+    c = Config()
+    model = ChatGoogleGenerativeAI(
+        model=c.model,
+        api_key="offline-placeholder",
+        temperature=c.temperature,
+        max_tokens=c.max_output_tokens,
+        max_retries=0,
+        thinking_level=c.thinking_level,
+    )
+    assert isinstance(
+        model.with_structured_output(
+            Generation, method="json_schema", include_raw=True
+        ),
+        Runnable,
+    )
+
+
 def test_scratch_structured_adapter(monkeypatch):
     from google import genai
 

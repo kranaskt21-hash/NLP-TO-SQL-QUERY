@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-10-31T11:09:53.484518+00:00",
+  "platform": "win32",
+  "python": "3.11.16",
+  "server_health": true,
+  "server_health_seconds": 1.857210699999996,
+  "server_rss_mib": 77.41796875,
+  "ui_app_test_seconds": 1.5634238999991794,
+  "ui_exceptions": 0,
+  "warm_download_dense_query_seconds": 8.69906009999977,
+  "in_process_ui_plus_embedding_rss_mib": 610.1328125,
+  "schema_hits": 8,
+  "note": "Windows local measurements; model files already downloaded. RSS is not peak memory or cloud assurance."
+}

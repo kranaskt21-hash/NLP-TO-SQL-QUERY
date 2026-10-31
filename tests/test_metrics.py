@@ -48,3 +48,30 @@ def test_bootstrap():
     assert bootstrap([0, 1]) == bootstrap([0, 1])
     assert bootstrap([]) is None
     assert paired_bootstrap({"q": 1}, {"q": 0})["mean"] == 1
+
+
+def test_aggregate_unavailable_usage():
+    from shared.experiments import aggregate
+    from shared.interfaces import Result
+    from shared.metrics import evaluate
+
+    result = Result(
+        "question",
+        status="abstain",
+        token_usage={"input": None, "output": None, "total": None},
+    )
+    metrics = evaluate(result, {"sql": "SELECT COUNT(*) FROM Track"})
+    report = aggregate(
+        [{"result": result.to_dict(), "metrics": metrics, "difficulty": "easy"}]
+    )
+    assert report["tokens_total"] is None and report["tokens_available"] == 0
+    assert aggregate([])["execution_accuracy"] is None
+
+
+def test_tie_groups_cannot_hide_rows():
+    import pytest
+
+    with pytest.raises(ValueError):
+        execution_equal(
+            e([(1, 2), (3, 4)]), e([(1, 2), (9, 9)]), ordered=True, tie_groups=[(0, 1)]
+        )

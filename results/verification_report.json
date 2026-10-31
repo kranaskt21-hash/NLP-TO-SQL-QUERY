@@ -1,0 +1,47 @@
+{
+  "timestamp": "2026-10-31T11:12:58.172965+00:00",
+  "python": "3.11.16",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "database_sha256": "7651ba378ac2fcd0dfc3c66fb101f7a7eed3ba39a612ec642b96e20702061f15",
+  "checks": {
+    "syntax": {
+      "passed": true,
+      "exit_code": 0
+    },
+    "imports": {
+      "passed": true,
+      "exit_code": 0
+    },
+    "gold_verification": {
+      "passed": true,
+      "exit_code": 0
+    },
+    "tests": {
+      "passed": true,
+      "exit_code": 0
+    },
+    "smoke_dry_run": {
+      "passed": true,
+      "exit_code": 0
+    },
+    "full_dry_run": {
+      "passed": true,
+      "exit_code": 0
+    },
+    "dependency_compatibility": {
+      "passed": true,
+      "exit_code": 0
+    }
+  },
+  "generation_test_mode": "mocked; no live accuracy measurement",
+  "pytest": {
+    "tests": 60,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "live_api": "skipped: no usable GEMINI_API_KEY",
+  "human_gold_review": "pending",
+  "deployment": "not performed; no authenticated Community Cloud access",
+  "warning": "langchain-community emits a sunset deprecation warning; pinned imports and components pass offline checks"
+}
