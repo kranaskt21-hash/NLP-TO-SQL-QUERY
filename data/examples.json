@@ -1,0 +1,625 @@
+[
+  {
+    "id": "R01",
+    "question": "List the first five artist names alphabetically.",
+    "sql": "SELECT Name FROM Artist ORDER BY Name LIMIT 5",
+    "references": {
+      "tables": [
+        "artist"
+      ],
+      "columns": [
+        "artist.name"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R02",
+    "question": "How many albums are in the catalog?",
+    "sql": "SELECT COUNT(*) AS Albums FROM Album",
+    "references": {
+      "tables": [
+        "album"
+      ],
+      "columns": [],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R03",
+    "question": "Show track names priced above 1.00, ordered by name.",
+    "sql": "SELECT Name FROM Track WHERE UnitPrice > 1 ORDER BY Name",
+    "references": {
+      "tables": [
+        "track"
+      ],
+      "columns": [
+        "track.name",
+        "track.unitprice"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R04",
+    "question": "List distinct customer countries alphabetically.",
+    "sql": "SELECT DISTINCT Country FROM Customer ORDER BY Country",
+    "references": {
+      "tables": [
+        "customer"
+      ],
+      "columns": [
+        "customer.country"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R05",
+    "question": "Show employee names and titles sorted by employee ID.",
+    "sql": "SELECT FirstName, LastName, Title FROM Employee ORDER BY EmployeeId",
+    "references": {
+      "tables": [
+        "employee"
+      ],
+      "columns": [
+        "employee.employeeid",
+        "employee.firstname",
+        "employee.lastname",
+        "employee.title"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R06",
+    "question": "Which invoices have a total greater than 20, ordered by invoice ID?",
+    "sql": "SELECT InvoiceId, Total FROM Invoice WHERE Total > 20 ORDER BY InvoiceId",
+    "references": {
+      "tables": [
+        "invoice"
+      ],
+      "columns": [
+        "invoice.invoiceid",
+        "invoice.total"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R07",
+    "question": "Count tracks for each media type, including empty media types, ordered by media type ID.",
+    "sql": "SELECT m.MediaTypeId, m.Name, COUNT(t.TrackId) AS Tracks FROM MediaType m LEFT JOIN Track t ON t.MediaTypeId=m.MediaTypeId GROUP BY m.MediaTypeId,m.Name ORDER BY m.MediaTypeId",
+    "references": {
+      "tables": [
+        "mediatype",
+        "track"
+      ],
+      "columns": [
+        "mediatype.mediatypeid",
+        "mediatype.name",
+        "track.mediatypeid",
+        "track.trackid"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R08",
+    "question": "Show album titles with their artist names, sorted by album ID.",
+    "sql": "SELECT a.Title,r.Name FROM Album a JOIN Artist r ON a.ArtistId=r.ArtistId ORDER BY a.AlbumId",
+    "references": {
+      "tables": [
+        "album",
+        "artist"
+      ],
+      "columns": [
+        "album.albumid",
+        "album.artistid",
+        "album.title",
+        "artist.artistid",
+        "artist.name"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R09",
+    "question": "Count customers per country, ordered by country.",
+    "sql": "SELECT Country, COUNT(*) AS Customers FROM Customer GROUP BY Country ORDER BY Country",
+    "references": {
+      "tables": [
+        "customer"
+      ],
+      "columns": [
+        "customer.country"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R10",
+    "question": "What is the average track duration in milliseconds?",
+    "sql": "SELECT AVG(Milliseconds) AS AverageDuration FROM Track",
+    "references": {
+      "tables": [
+        "track"
+      ],
+      "columns": [
+        "track.milliseconds"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R11",
+    "question": "Show total invoice revenue by billing country, ordered by country.",
+    "sql": "SELECT BillingCountry, SUM(Total) AS Revenue FROM Invoice GROUP BY BillingCountry ORDER BY BillingCountry",
+    "references": {
+      "tables": [
+        "invoice"
+      ],
+      "columns": [
+        "invoice.billingcountry",
+        "invoice.total"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R12",
+    "question": "List track names and genre names for genre ID 1, ordered by track ID.",
+    "sql": "SELECT t.Name,g.Name AS Genre FROM Track t JOIN Genre g ON t.GenreId=g.GenreId WHERE g.GenreId=1 ORDER BY t.TrackId",
+    "references": {
+      "tables": [
+        "genre",
+        "track"
+      ],
+      "columns": [
+        "genre.genreid",
+        "genre.name",
+        "track.genreid",
+        "track.name",
+        "track.trackid"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R13",
+    "question": "List invoice IDs issued during calendar year 2010, ordered by ID.",
+    "sql": "SELECT InvoiceId FROM Invoice WHERE InvoiceDate >= '2010-01-01' AND InvoiceDate < '2011-01-01' ORDER BY InvoiceId",
+    "references": {
+      "tables": [
+        "invoice"
+      ],
+      "columns": [
+        "invoice.invoicedate",
+        "invoice.invoiceid"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R14",
+    "question": "Which customer IDs have never placed an invoice, sorted ascending?",
+    "sql": "SELECT CustomerId FROM Customer WHERE NOT EXISTS (SELECT 1 FROM Invoice i WHERE i.CustomerId=Customer.CustomerId) ORDER BY CustomerId",
+    "references": {
+      "tables": [
+        "customer",
+        "invoice"
+      ],
+      "columns": [
+        "customer.customerid",
+        "invoice.customerid"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R15",
+    "question": "Find the three longest tracks; break duration ties by track ID ascending.",
+    "sql": "SELECT TrackId,Name,Milliseconds FROM Track ORDER BY Milliseconds DESC,TrackId LIMIT 3",
+    "references": {
+      "tables": [
+        "track"
+      ],
+      "columns": [
+        "track.milliseconds",
+        "track.name",
+        "track.trackid"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R16",
+    "question": "Show playlist names and their track counts including empty playlists, ordered by playlist ID.",
+    "sql": "SELECT p.Name,COUNT(pt.TrackId) AS Tracks FROM Playlist p LEFT JOIN PlaylistTrack pt ON p.PlaylistId=pt.PlaylistId GROUP BY p.PlaylistId,p.Name ORDER BY p.PlaylistId",
+    "references": {
+      "tables": [
+        "playlist",
+        "playlisttrack"
+      ],
+      "columns": [
+        "playlist.name",
+        "playlist.playlistid",
+        "playlisttrack.playlistid",
+        "playlisttrack.trackid"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R17",
+    "question": "What is the total quantity of tracks sold?",
+    "sql": "SELECT SUM(Quantity) AS Units FROM InvoiceLine",
+    "references": {
+      "tables": [
+        "invoiceline"
+      ],
+      "columns": [
+        "invoiceline.quantity"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R18",
+    "question": "List customer IDs whose invoices sum to over 40, ordered by ID.",
+    "sql": "SELECT CustomerId,SUM(Total) AS Spend FROM Invoice GROUP BY CustomerId HAVING SUM(Total)>40 ORDER BY CustomerId",
+    "references": {
+      "tables": [
+        "invoice"
+      ],
+      "columns": [
+        "invoice.customerid",
+        "invoice.total"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R19",
+    "question": "Show track names containing the word love as a substring, case insensitive, sorted by track ID.",
+    "sql": "SELECT Name FROM Track WHERE LOWER(Name) LIKE '%love%' ORDER BY TrackId",
+    "references": {
+      "tables": [
+        "track"
+      ],
+      "columns": [
+        "track.name",
+        "track.trackid"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R20",
+    "question": "List direct reports of employee ID 2 by employee ID.",
+    "sql": "SELECT EmployeeId,FirstName,LastName FROM Employee WHERE ReportsTo=2 ORDER BY EmployeeId",
+    "references": {
+      "tables": [
+        "employee"
+      ],
+      "columns": [
+        "employee.employeeid",
+        "employee.firstname",
+        "employee.lastname",
+        "employee.reportsto"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R21",
+    "question": "For each album, show minimum catalog track price, sorted by album ID.",
+    "sql": "SELECT AlbumId,MIN(UnitPrice) AS MinimumPrice FROM Track GROUP BY AlbumId ORDER BY AlbumId",
+    "references": {
+      "tables": [
+        "track"
+      ],
+      "columns": [
+        "track.albumid",
+        "track.unitprice"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R22",
+    "question": "Which tracks are not in any playlist? Return IDs ascending.",
+    "sql": "SELECT TrackId FROM Track WHERE NOT EXISTS(SELECT 1 FROM PlaylistTrack p WHERE p.TrackId=Track.TrackId) ORDER BY TrackId",
+    "references": {
+      "tables": [
+        "playlisttrack",
+        "track"
+      ],
+      "columns": [
+        "playlisttrack.trackid",
+        "track.trackid"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R23",
+    "question": "Show average invoice total by calendar year, sorted by year.",
+    "sql": "SELECT strftime('%Y',InvoiceDate) AS Year,AVG(Total) AS AverageTotal FROM Invoice GROUP BY Year ORDER BY Year",
+    "references": {
+      "tables": [
+        "invoice"
+      ],
+      "columns": [
+        "invoice.invoicedate",
+        "invoice.total"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R24",
+    "question": "Show the five genres with greatest sold quantity; break ties by genre ID.",
+    "sql": "SELECT g.GenreId,g.Name,SUM(l.Quantity) AS Units FROM Genre g JOIN Track t ON t.GenreId=g.GenreId JOIN InvoiceLine l ON l.TrackId=t.TrackId GROUP BY g.GenreId,g.Name ORDER BY Units DESC,g.GenreId LIMIT 5",
+    "references": {
+      "tables": [
+        "genre",
+        "invoiceline",
+        "track"
+      ],
+      "columns": [
+        "genre.genreid",
+        "genre.name",
+        "invoiceline.quantity",
+        "invoiceline.trackid",
+        "track.genreid",
+        "track.trackid"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R25",
+    "question": "For each support representative, count assigned customers including zero, sorted by employee ID.",
+    "sql": "SELECT e.EmployeeId,COUNT(c.CustomerId) AS Customers FROM Employee e LEFT JOIN Customer c ON c.SupportRepId=e.EmployeeId GROUP BY e.EmployeeId ORDER BY e.EmployeeId",
+    "references": {
+      "tables": [
+        "customer",
+        "employee"
+      ],
+      "columns": [
+        "customer.customerid",
+        "customer.supportrepid",
+        "employee.employeeid"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R26",
+    "question": "List albums with more than 15 tracks, ordered by album ID.",
+    "sql": "SELECT AlbumId,COUNT(*) AS Tracks FROM Track GROUP BY AlbumId HAVING COUNT(*)>15 ORDER BY AlbumId",
+    "references": {
+      "tables": [
+        "track"
+      ],
+      "columns": [
+        "track.albumid"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R27",
+    "question": "Find customers spending above the mean of customer spending totals; return customer ID and spend sorted by ID.",
+    "sql": "WITH s AS (SELECT CustomerId,SUM(Total) Spend FROM Invoice GROUP BY CustomerId) SELECT CustomerId,Spend FROM s WHERE Spend>(SELECT AVG(Spend) FROM s) ORDER BY CustomerId",
+    "references": {
+      "tables": [
+        "invoice"
+      ],
+      "columns": [
+        "invoice.customerid",
+        "invoice.total"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R28",
+    "question": "Return track ID and revenue for each sold track, sorted by ID.",
+    "sql": "SELECT TrackId,SUM(UnitPrice*Quantity) AS Revenue FROM InvoiceLine GROUP BY TrackId ORDER BY TrackId",
+    "references": {
+      "tables": [
+        "invoiceline"
+      ],
+      "columns": [
+        "invoiceline.quantity",
+        "invoiceline.trackid",
+        "invoiceline.unitprice"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R29",
+    "question": "Show customer IDs and their latest invoice date, sorted by customer ID.",
+    "sql": "SELECT CustomerId,MAX(InvoiceDate) AS Latest FROM Invoice GROUP BY CustomerId ORDER BY CustomerId",
+    "references": {
+      "tables": [
+        "invoice"
+      ],
+      "columns": [
+        "invoice.customerid",
+        "invoice.invoicedate"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "R30",
+    "question": "Show artists without albums, sorted by artist ID.",
+    "sql": "SELECT ArtistId,Name FROM Artist WHERE NOT EXISTS(SELECT 1 FROM Album a WHERE a.ArtistId=Artist.ArtistId) ORDER BY ArtistId",
+    "references": {
+      "tables": [
+        "album",
+        "artist"
+      ],
+      "columns": [
+        "album.artistid",
+        "artist.artistid",
+        "artist.name"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  }
+]

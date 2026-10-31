@@ -1,0 +1,7 @@
+[theme]
+primaryColor = "#087e8b"
+base = "light"
+[server]
+headless = true
+[client]
+showErrorDetails = "none"

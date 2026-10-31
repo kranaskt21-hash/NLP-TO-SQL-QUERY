@@ -1,0 +1,681 @@
+{
+  "database_integrity": "passed",
+  "foreign_keys": "passed",
+  "execution": {
+    "R01": {
+      "execution": "passed",
+      "rows": 5,
+      "columns": 1,
+      "references_supported": true
+    },
+    "R02": {
+      "execution": "passed",
+      "rows": 1,
+      "columns": 1,
+      "references_supported": true
+    },
+    "R03": {
+      "execution": "passed",
+      "rows": 213,
+      "columns": 1,
+      "references_supported": true
+    },
+    "R04": {
+      "execution": "passed",
+      "rows": 24,
+      "columns": 1,
+      "references_supported": true
+    },
+    "R05": {
+      "execution": "passed",
+      "rows": 8,
+      "columns": 3,
+      "references_supported": true
+    },
+    "R06": {
+      "execution": "passed",
+      "rows": 4,
+      "columns": 2,
+      "references_supported": true
+    },
+    "R07": {
+      "execution": "passed",
+      "rows": 5,
+      "columns": 3,
+      "references_supported": true
+    },
+    "R08": {
+      "execution": "passed",
+      "rows": 347,
+      "columns": 2,
+      "references_supported": true
+    },
+    "R09": {
+      "execution": "passed",
+      "rows": 24,
+      "columns": 2,
+      "references_supported": true
+    },
+    "R10": {
+      "execution": "passed",
+      "rows": 1,
+      "columns": 1,
+      "references_supported": true
+    },
+    "R11": {
+      "execution": "passed",
+      "rows": 24,
+      "columns": 2,
+      "references_supported": true
+    },
+    "R12": {
+      "execution": "passed",
+      "rows": 1297,
+      "columns": 2,
+      "references_supported": true
+    },
+    "R13": {
+      "execution": "passed",
+      "rows": 0,
+      "columns": 1,
+      "references_supported": true
+    },
+    "R14": {
+      "execution": "passed",
+      "rows": 0,
+      "columns": 1,
+      "references_supported": true
+    },
+    "R15": {
+      "execution": "passed",
+      "rows": 3,
+      "columns": 3,
+      "references_supported": true
+    },
+    "R16": {
+      "execution": "passed",
+      "rows": 18,
+      "columns": 2,
+      "references_supported": true
+    },
+    "R17": {
+      "execution": "passed",
+      "rows": 1,
+      "columns": 1,
+      "references_supported": true
+    },
+    "R18": {
+      "execution": "passed",
+      "rows": 14,
+      "columns": 2,
+      "references_supported": true
+    },
+    "R19": {
+      "execution": "passed",
+      "rows": 114,
+      "columns": 1,
+      "references_supported": true
+    },
+    "R20": {
+      "execution": "passed",
+      "rows": 3,
+      "columns": 3,
+      "references_supported": true
+    },
+    "R21": {
+      "execution": "passed",
+      "rows": 347,
+      "columns": 2,
+      "references_supported": true
+    },
+    "R22": {
+      "execution": "passed",
+      "rows": 0,
+      "columns": 1,
+      "references_supported": true
+    },
+    "R23": {
+      "execution": "passed",
+      "rows": 5,
+      "columns": 2,
+      "references_supported": true
+    },
+    "R24": {
+      "execution": "passed",
+      "rows": 5,
+      "columns": 3,
+      "references_supported": true
+    },
+    "R25": {
+      "execution": "passed",
+      "rows": 8,
+      "columns": 2,
+      "references_supported": true
+    },
+    "R26": {
+      "execution": "passed",
+      "rows": 61,
+      "columns": 2,
+      "references_supported": true
+    },
+    "R27": {
+      "execution": "passed",
+      "rows": 22,
+      "columns": 2,
+      "references_supported": true
+    },
+    "R28": {
+      "execution": "passed",
+      "rows": 1984,
+      "columns": 2,
+      "references_supported": true
+    },
+    "R29": {
+      "execution": "passed",
+      "rows": 59,
+      "columns": 2,
+      "references_supported": true
+    },
+    "R30": {
+      "execution": "passed",
+      "rows": 71,
+      "columns": 2,
+      "references_supported": true
+    },
+    "E01": {
+      "execution": "passed",
+      "rows": 1,
+      "columns": 1,
+      "references_supported": true
+    },
+    "E02": {
+      "execution": "passed",
+      "rows": 18,
+      "columns": 2,
+      "references_supported": true
+    },
+    "E03": {
+      "execution": "passed",
+      "rows": 6,
+      "columns": 2,
+      "references_supported": true
+    },
+    "E04": {
+      "execution": "passed",
+      "rows": 1,
+      "columns": 1,
+      "references_supported": true
+    },
+    "E05": {
+      "execution": "passed",
+      "rows": 1,
+      "columns": 2,
+      "references_supported": true
+    },
+    "E06": {
+      "execution": "passed",
+      "rows": 49,
+      "columns": 1,
+      "references_supported": true
+    },
+    "E07": {
+      "execution": "passed",
+      "rows": 5,
+      "columns": 1,
+      "references_supported": true
+    },
+    "E08": {
+      "execution": "passed",
+      "rows": 1,
+      "columns": 1,
+      "references_supported": true
+    },
+    "E09": {
+      "execution": "passed",
+      "rows": 260,
+      "columns": 1,
+      "references_supported": true
+    },
+    "E10": {
+      "execution": "passed",
+      "rows": 4,
+      "columns": 1,
+      "references_supported": true
+    },
+    "E11": {
+      "execution": "passed",
+      "rows": 1,
+      "columns": 1,
+      "references_supported": true
+    },
+    "E12": {
+      "execution": "passed",
+      "rows": 4,
+      "columns": 1,
+      "references_supported": true
+    },
+    "E13": {
+      "execution": "passed",
+      "rows": 1,
+      "columns": 1,
+      "references_supported": true
+    },
+    "E14": {
+      "execution": "passed",
+      "rows": 0,
+      "columns": 1,
+      "references_supported": true
+    },
+    "E15": {
+      "execution": "passed",
+      "rows": 1,
+      "columns": 2,
+      "references_supported": true
+    },
+    "E16": {
+      "execution": "passed",
+      "rows": 1,
+      "columns": 1,
+      "references_supported": true
+    },
+    "E17": {
+      "execution": "passed",
+      "rows": 10,
+      "columns": 2,
+      "references_supported": true
+    },
+    "E18": {
+      "execution": "passed",
+      "rows": 1,
+      "columns": 1,
+      "references_supported": true
+    },
+    "E19": {
+      "execution": "passed",
+      "rows": 14,
+      "columns": 1,
+      "references_supported": true
+    },
+    "E20": {
+      "execution": "passed",
+      "rows": 0,
+      "columns": 1,
+      "references_supported": true
+    },
+    "M01": {
+      "execution": "passed",
+      "rows": 59,
+      "columns": 3,
+      "references_supported": true
+    },
+    "M02": {
+      "execution": "passed",
+      "rows": 25,
+      "columns": 2,
+      "references_supported": true
+    },
+    "M03": {
+      "execution": "passed",
+      "rows": 26,
+      "columns": 2,
+      "references_supported": true
+    },
+    "M04": {
+      "execution": "passed",
+      "rows": 412,
+      "columns": 2,
+      "references_supported": true
+    },
+    "M05": {
+      "execution": "passed",
+      "rows": 17,
+      "columns": 3,
+      "references_supported": true
+    },
+    "M06": {
+      "execution": "passed",
+      "rows": 0,
+      "columns": 2,
+      "references_supported": true
+    },
+    "M07": {
+      "execution": "passed",
+      "rows": 21,
+      "columns": 3,
+      "references_supported": true
+    },
+    "M08": {
+      "execution": "passed",
+      "rows": 9,
+      "columns": 2,
+      "references_supported": true
+    },
+    "M09": {
+      "execution": "passed",
+      "rows": 1477,
+      "columns": 2,
+      "references_supported": true
+    },
+    "M10": {
+      "execution": "passed",
+      "rows": 5,
+      "columns": 2,
+      "references_supported": true
+    },
+    "M11": {
+      "execution": "passed",
+      "rows": 0,
+      "columns": 1,
+      "references_supported": true
+    },
+    "M12": {
+      "execution": "passed",
+      "rows": 7,
+      "columns": 3,
+      "references_supported": true
+    },
+    "M13": {
+      "execution": "passed",
+      "rows": 1,
+      "columns": 1,
+      "references_supported": true
+    },
+    "M14": {
+      "execution": "passed",
+      "rows": 123,
+      "columns": 1,
+      "references_supported": true
+    },
+    "M15": {
+      "execution": "passed",
+      "rows": 24,
+      "columns": 2,
+      "references_supported": true
+    },
+    "M16": {
+      "execution": "passed",
+      "rows": 111,
+      "columns": 2,
+      "references_supported": true
+    },
+    "M17": {
+      "execution": "passed",
+      "rows": 0,
+      "columns": 1,
+      "references_supported": true
+    },
+    "M18": {
+      "execution": "passed",
+      "rows": 347,
+      "columns": 2,
+      "references_supported": true
+    },
+    "M19": {
+      "execution": "passed",
+      "rows": 59,
+      "columns": 1,
+      "references_supported": true
+    },
+    "M20": {
+      "execution": "passed",
+      "rows": 10,
+      "columns": 2,
+      "references_supported": true
+    },
+    "M21": {
+      "execution": "passed",
+      "rows": 59,
+      "columns": 2,
+      "references_supported": true
+    },
+    "M22": {
+      "execution": "passed",
+      "rows": 55,
+      "columns": 2,
+      "references_supported": true
+    },
+    "M23": {
+      "execution": "passed",
+      "rows": 1,
+      "columns": 1,
+      "references_supported": true
+    },
+    "M24": {
+      "execution": "passed",
+      "rows": 14,
+      "columns": 2,
+      "references_supported": true
+    },
+    "M25": {
+      "execution": "passed",
+      "rows": 3,
+      "columns": 2,
+      "references_supported": true
+    },
+    "H01": {
+      "execution": "passed",
+      "rows": 1,
+      "columns": 1,
+      "references_supported": true
+    },
+    "H02": {
+      "execution": "passed",
+      "rows": 49,
+      "columns": 3,
+      "references_supported": true
+    },
+    "H03": {
+      "execution": "passed",
+      "rows": 412,
+      "columns": 3,
+      "references_supported": true
+    },
+    "H04": {
+      "execution": "passed",
+      "rows": 32,
+      "columns": 1,
+      "references_supported": true
+    },
+    "H05": {
+      "execution": "passed",
+      "rows": 5,
+      "columns": 2,
+      "references_supported": true
+    },
+    "H06": {
+      "execution": "passed",
+      "rows": 214,
+      "columns": 1,
+      "references_supported": true
+    },
+    "H07": {
+      "execution": "passed",
+      "rows": 24,
+      "columns": 3,
+      "references_supported": true
+    },
+    "H08": {
+      "execution": "passed",
+      "rows": 48,
+      "columns": 1,
+      "references_supported": true
+    },
+    "H09": {
+      "execution": "passed",
+      "rows": 5,
+      "columns": 3,
+      "references_supported": true
+    },
+    "H10": {
+      "execution": "passed",
+      "rows": 59,
+      "columns": 1,
+      "references_supported": true
+    },
+    "H11": {
+      "execution": "passed",
+      "rows": 26,
+      "columns": 3,
+      "references_supported": true
+    },
+    "H12": {
+      "execution": "passed",
+      "rows": 24,
+      "columns": 2,
+      "references_supported": true
+    },
+    "H13": {
+      "execution": "passed",
+      "rows": 1,
+      "columns": 1,
+      "references_supported": true
+    },
+    "H14": {
+      "execution": "passed",
+      "rows": 9,
+      "columns": 1,
+      "references_supported": true
+    },
+    "H15": {
+      "execution": "passed",
+      "rows": 72,
+      "columns": 4,
+      "references_supported": true
+    },
+    "D01": {
+      "execution": "passed",
+      "rows": 1,
+      "columns": 1,
+      "references_supported": true
+    },
+    "D02": {
+      "execution": "passed",
+      "rows": 5,
+      "columns": 2,
+      "references_supported": true
+    },
+    "D03": {
+      "execution": "passed",
+      "rows": 4,
+      "columns": 2,
+      "references_supported": true
+    }
+  },
+  "failures": [],
+  "semantic_checks": [
+    {
+      "id": "E01",
+      "check": "Python count of Brazilian customers",
+      "passed": true
+    },
+    {
+      "id": "E04",
+      "check": "Python sum of invoice totals",
+      "passed": true
+    },
+    {
+      "id": "E05",
+      "check": "Python price extrema",
+      "passed": true
+    },
+    {
+      "id": "E06",
+      "check": "Python null company filter",
+      "passed": true
+    },
+    {
+      "id": "E08",
+      "check": "Python Canada invoice count",
+      "passed": true
+    },
+    {
+      "id": "E09",
+      "check": "Strict ten-minute boundary",
+      "passed": true
+    },
+    {
+      "id": "E13",
+      "check": "Python sum of track bytes",
+      "passed": true
+    },
+    {
+      "id": "E14",
+      "check": "Half-open March date interval",
+      "passed": true
+    },
+    {
+      "id": "M02",
+      "check": "Python grouped mean duration",
+      "passed": true
+    },
+    {
+      "id": "H01",
+      "check": "All top spending ties",
+      "passed": true
+    },
+    {
+      "id": "H02",
+      "check": "Per-genre top two and explicit duration tie breaking",
+      "passed": true
+    },
+    {
+      "id": "H03",
+      "check": "Python running sum with date/ID ordering",
+      "passed": true
+    },
+    {
+      "id": "H13",
+      "check": "Independent Python median",
+      "passed": true
+    },
+    {
+      "id": "H14",
+      "check": "Python set coverage of observed invoice years",
+      "passed": true
+    },
+    {
+      "id": "R02",
+      "check": "Catalog count invariant",
+      "passed": true
+    },
+    {
+      "id": "R15",
+      "check": "Python longest tracks and tie ordering",
+      "passed": true
+    }
+  ],
+  "human_review": "pending",
+  "overlap_candidates": [
+    {
+      "retrieval": "R12",
+      "evaluation": "M05",
+      "jaccard": 0.6153846153846154,
+      "sequence_ratio": 0.75
+    },
+    {
+      "retrieval": "R12",
+      "evaluation": "M09",
+      "jaccard": 0.5833333333333334,
+      "sequence_ratio": 0.7575757575757576
+    },
+    {
+      "retrieval": "R16",
+      "evaluation": "M24",
+      "jaccard": 0.36363636363636365,
+      "sequence_ratio": 0.7464114832535885
+    },
+    {
+      "retrieval": "R18",
+      "evaluation": "E12",
+      "jaccard": 0.4,
+      "sequence_ratio": 0.7304347826086957
+    },
+    {
+      "retrieval": "R25",
+      "evaluation": "M25",
+      "jaccard": 0.5789473684210527,
+      "sequence_ratio": 0.6396761133603239
+    }
+  ],
+  "overlap_note": "Lexical heuristics flag candidates only; do not prove absence of semantic overlap."
+}

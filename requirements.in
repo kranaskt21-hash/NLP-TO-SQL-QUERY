@@ -1,0 +1,16 @@
+streamlit
+pandas
+numpy
+plotly
+faiss-cpu
+google-genai
+langchain-google-genai
+sentence-transformers
+rank-bm25
+sqlglot
+langchain-community
+langchain-core
+sqlalchemy
+pytest
+psutil
+huggingface-hub

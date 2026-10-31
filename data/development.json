@@ -1,0 +1,61 @@
+[
+  {
+    "id": "D01",
+    "question": "How many tracks belong to genre ID 7?",
+    "sql": "SELECT COUNT(*) FROM Track WHERE GenreId=7",
+    "references": {
+      "tables": [
+        "track"
+      ],
+      "columns": [
+        "track.genreid"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "D02",
+    "question": "Show revenue billed in London by year, sorted by year.",
+    "sql": "SELECT strftime('%Y',InvoiceDate) Year,SUM(Total) FROM Invoice WHERE BillingCity='London' GROUP BY Year ORDER BY Year",
+    "references": {
+      "tables": [
+        "invoice"
+      ],
+      "columns": [
+        "invoice.billingcity",
+        "invoice.invoicedate",
+        "invoice.total"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  },
+  {
+    "id": "D03",
+    "question": "List the four albums with the most catalog tracks, ties by album ID.",
+    "sql": "SELECT AlbumId,COUNT(*) n FROM Track GROUP BY AlbumId ORDER BY n DESC,AlbumId LIMIT 4",
+    "references": {
+      "tables": [
+        "track"
+      ],
+      "columns": [
+        "track.albumid"
+      ],
+      "supported": true
+    },
+    "verification": {
+      "automated_execution": "passed",
+      "semantic_checks": "see data/verification.json",
+      "human_review": "pending"
+    }
+  }
+]
