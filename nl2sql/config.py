@@ -52,6 +52,7 @@ class Config:
     corrections: int = 2
     distractors: int = 0
     seed: int = 42
+    request_timeout_ms: int = 30000
     temperature: float = 0.0
     max_output_tokens: int = 2048
     deadline_s: float = 3.0

@@ -45,6 +45,7 @@ def test_scratch_structured_adapter(monkeypatch):
         def __init__(self, **kwargs):
             self.models = SimpleNamespace(generate_content=generate_content)
 
+    Client.close = lambda self: None
     monkeypatch.setattr(genai, "Client", Client)
     monkeypatch.setattr(module, "get_api_key", lambda: "mock-key")
     generation, usage = module.ScratchModel(Config()).invoke("question")
@@ -111,6 +112,7 @@ def test_remote_embedding_budget_and_tasks(monkeypatch):
         def __init__(self, **kwargs):
             self.models = SimpleNamespace(embed_content=embed_content)
 
+    Client.close = lambda self: None
     monkeypatch.setattr(genai, "Client", Client)
     monkeypatch.setattr(module, "get_api_key", lambda: "mock-key")
     budget = Budget(calls=5)

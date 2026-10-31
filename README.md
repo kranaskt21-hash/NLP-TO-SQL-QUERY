@@ -216,3 +216,15 @@ Limitations include one small English schema, hand-written labels pending human 
 - [LangChain Gemini integration](https://docs.langchain.com/oss/python/integrations/chat/google_generative_ai), [official FAISS wrapper source](https://github.com/langchain-ai/langchain-community/blob/main/libs/community/langchain_community/vectorstores/faiss.py), [official BM25 reference](https://reference.langchain.com/python/langchain-community/retrievers).
 - [BGE model card](https://huggingface.co/BAAI/bge-small-en-v1.5), [MiniLM model card](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2).
 - Streamlit API guidance was read from the installed version's bundled skill/reference documentation; actual imports, AppTest and server health were also checked.
+
+## Diagnosing a model request failure
+
+The sidebar now exposes **Gemini generation model** and **Gemini connection check ? Check connection**. The check sends no business question: it reads one model-catalog page and requests a tiny structured response through the selected scratch/LangChain adapter. It makes at most two requests, counts both toward the session budget, disables response caching/retries, and may consume paid quota. A catalog listing alone does not prove generation entitlement or remaining quota.
+
+Save your key in Community Cloud **Settings ? Secrets**, then reboot the app. Do not paste keys into chat, logs, or GitHub. Newly issued authorization keys are supported; no legacy-prefix validation is imposed. If a key was shared, replace it in AI Studio and update Secrets.
+
+Errors now show a fixed actionable category, nested exception types, HTTP status when available and source-file/line locations. Raw provider messages, request URLs, headers, response content and traceback locals are never displayed. A bare RuntimeError does not identify the cause. For example, 401/403 indicate authentication/permissions, 404 model access, 429 quota, and network/TLS failures have a separate category. The app explicitly selects the Gemini Developer API and uses a 30-second request timeout. No live connection success is claimed without an actual provider response.
+
+For the development question ?How many tracks belong to genre ID 7??, the bundled SQLite database returns **579** using `SELECT COUNT(*) FROM Track WHERE GenreId = 7`. This confirms the database answer, not successful model generation.
+
+The original scratch adapter used a temporary `Client(...).models` expression. With the pinned SDK, the parent client's destructor closes its HTTP transport before `generate_content` runs, causing `RuntimeError: Cannot send a request, as the client has been closed.` The adapter now retains the client until the request finishes and closes it in `finally`. A real-SDK test with a mocked HTTP transport reproduces the lifecycle behavior and verifies the fix without a key or network. This is separate from live API verification.

@@ -36,6 +36,7 @@ class Result:
     timings: dict[str, float] = field(default_factory=dict)
     token_usage: dict[str, int | None] | None = None
     retries: list[dict] = field(default_factory=list)
+    model_diagnostics: dict = field(default_factory=dict)
     errors: list[str] = field(default_factory=list)
     fingerprint: str = ""
     summary: str = ""

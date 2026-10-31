@@ -59,7 +59,9 @@ class Embedder:
             from nl2sql.llm import ModelError
 
             client = genai.Client(
-                api_key=get_api_key(), http_options={"retry_options": {"attempts": 1}}
+                api_key=get_api_key(),
+                vertexai=False,
+                http_options={"retry_options": {"attempts": 1}},
             )
             vectors = []
             for start in range(0, len(texts), EMBEDDING_BATCH_SIZE):

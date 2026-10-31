@@ -5,6 +5,7 @@ import subprocess
 
 PATTERNS = [
     r"AIza[0-9A-Za-z_-]{35}",
+    r"AQ\.[A-Za-z0-9_-]{30,}",
     r"gh[pousr]_[A-Za-z0-9]{20,}",
     r"github_pat_[A-Za-z0-9_]{30,}",
     r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----",

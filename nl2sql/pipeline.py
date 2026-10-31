@@ -214,6 +214,7 @@ class Pipeline:
             r.status = "budget"
             r.errors.append(str(exc))
         except ModelError as exc:
+            r.model_diagnostics = exc.diagnostics
             r.status = "model_error"
             r.errors.append(str(exc))
         except Exception as exc:

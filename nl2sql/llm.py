@@ -20,7 +20,9 @@ class BudgetError(RuntimeError):
 
 
 class ModelError(RuntimeError):
-    pass
+    def __init__(self, message, diagnostics=None):
+        super().__init__(message)
+        self.diagnostics = diagnostics or {}
 
 
 class Generation(BaseModel):
@@ -41,7 +43,7 @@ def get_api_key():
         key = os.environ.get("GEMINI_API_KEY")
     if not key or key.startswith("REPLACE_"):
         raise MissingKey("Set GEMINI_API_KEY in Streamlit secrets or the environment.")
-    return key
+    return key.strip()
 
 
 class Budget:
@@ -77,21 +79,32 @@ class ScratchModel:
         from google import genai
         from google.genai import types
 
-        response = genai.Client(
-            api_key=get_api_key(), http_options={"retry_options": {"attempts": 1}}
-        ).models.generate_content(
-            model=self.config.model,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=self.config.temperature,
-                max_output_tokens=self.config.max_output_tokens,
-                response_mime_type="application/json",
-                response_schema=Generation,
-                thinking_config=types.ThinkingConfig(
-                    thinking_level=self.config.thinking_level
-                ),
-            ),
+        # Keep the owning client alive: a temporary Client(...).models expression
+        # is finalized by the SDK before generate_content can send its request.
+        client = genai.Client(
+            api_key=get_api_key(),
+            vertexai=False,
+            http_options={
+                "retry_options": {"attempts": 1},
+                "timeout": self.config.request_timeout_ms,
+            },
         )
+        try:
+            response = client.models.generate_content(
+                model=self.config.model,
+                contents=prompt,
+                config=types.GenerateContentConfig(
+                    temperature=self.config.temperature,
+                    max_output_tokens=self.config.max_output_tokens,
+                    response_mime_type="application/json",
+                    response_schema=Generation,
+                    thinking_config=types.ThinkingConfig(
+                        thinking_level=self.config.thinking_level
+                    ),
+                ),
+            )
+        finally:
+            client.close()
         usage = response.usage_metadata
         return Generation.model_validate_json(response.text), (
             {
@@ -150,13 +163,13 @@ class CachedModel:
             except (MissingKey, BudgetError):
                 raise
             except Exception as exc:
-                # Provider messages may echo inputs or credentials: never persist them.
-                status = getattr(exc, "code", None) or getattr(exc, "status_code", None)
-                if str(status) in ("429", "503") and attempt < c.transport_retries:
+                from nl2sql.model_errors import failure_message, safe_failure
+
+                details = safe_failure(exc)
+                if (
+                    details["http_status"] in (429, 503)
+                    and attempt < c.transport_retries
+                ):
                     time.sleep(min(2**attempt, 4))
                     continue
-                raise ModelError(
-                    "Model request failed ("
-                    + str(status or type(exc).__name__)
-                    + "). Check key, quota, model availability or connection."
-                ) from None
+                raise ModelError(failure_message(details), details) from None

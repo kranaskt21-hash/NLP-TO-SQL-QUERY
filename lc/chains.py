@@ -14,6 +14,8 @@ class LangChainModel:
         model = ChatGoogleGenerativeAI(
             model=self.config.model,
             api_key=get_api_key(),
+            vertexai=False,
+            timeout=self.config.request_timeout_ms,
             temperature=self.config.temperature,
             max_tokens=self.config.max_output_tokens,
             max_retries=0,

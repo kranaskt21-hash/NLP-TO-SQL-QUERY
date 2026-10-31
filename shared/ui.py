@@ -19,6 +19,9 @@ def show_result(result):
     if result.errors:
         for error in result.errors:
             st.warning(error)
+    if result.model_diagnostics:
+        with st.expander("Safe model failure diagnostics", expanded=True):
+            st.json(result.model_diagnostics)
     if result.execution:
         execution = result.execution
         df = pd.DataFrame(execution.rows, columns=execution.columns)

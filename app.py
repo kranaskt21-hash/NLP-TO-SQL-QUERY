@@ -19,6 +19,11 @@ if "budget" not in st.session_state:
 with st.sidebar:
     st.subheader("Pipeline settings")
     implementation = st.selectbox("Implementation", ["scratch", "langchain"])
+    generation_model = st.text_input(
+        "Gemini generation model",
+        value=Config().model,
+        help="Use a generation model accessible to your API key. The connection check below lists models from the first catalog page.",
+    )
     retrieval = st.selectbox("Retrieval", ["hybrid", "dense", "bm25"])
     embedding = st.selectbox("Embedding model", [MINILM, BGE, GEMINI_EMBED])
     schema_mode = st.selectbox("Schema context", ["retrieved", "full"])
@@ -37,6 +42,7 @@ with st.sidebar:
     st.link_button("GitHub · Kashish Rata", "https://github.com/kranaskt21-hash")
 config = Config(
     implementation=implementation,
+    model=generation_model.strip(),
     retrieval=retrieval,
     embedding=embedding,
     schema_mode=schema_mode,
@@ -48,6 +54,24 @@ config = Config(
     candidates=candidates,
     schema_k=schema_k,
 )
+with st.sidebar.expander("Gemini connection check"):
+    st.caption(
+        "Sends a model-list request and a tiny structured generation request (up to 2 API calls from your session budget). May use paid quota. No user question is sent."
+    )
+    if st.button("Check connection", key="check_gemini"):
+        from nl2sql.diagnostics import check_connection
+
+        with st.spinner("Checking the selected Gemini model..."):
+            st.session_state.connection_check = check_connection(
+                config, st.session_state.budget
+            )
+    if "connection_check" in st.session_state:
+        check = st.session_state.connection_check
+        if check.status == "success":
+            st.success(check.message)
+        else:
+            st.warning(check.message)
+        st.json(check.to_dict())
 try:
     get_api_key()
 except MissingKey:
